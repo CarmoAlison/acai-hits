@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí Hits</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/logos/Logo-cabeca-hits.png" type="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        
+        <div class="logo">
+            <div class="foto-logo">
+                <img src="./assets/logos/Logo-cabeca-hits.png" alt="Hits açaí logo">
+            </div>
+            <hr>
+            <div class="texto-logo">
+                <h1>Açaí <span>Hits</span></h1>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#specials">Especiais</a></li>
+            <li><a href="#custom">Personalizar</a></li>
+            <li><a href="#salgados">Salgados</a></li>
+            <li><a href="teste.html">Contato</a></li>
+        </ul>
+        <div class="header-buttons">
+            <button class="cart-btn" id="cart-button">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Hits Logo cabeça">
+            <h1>O melhor açaí <span>da região!</span></h1>
+            <p>Experimente nosso açaí especial com ingredientes de qualidade e combinações irresistíveis.</p>
+            <div class="button-hero">
+                <button class="btn" id="menu-button">Cardápio</button>
+                <a href="#specials"><button class="btn" >Acesse os Especiais</button></a>
+                <a href="#custom"><button class="btn" >Custumize o açaí</button></a>
+                <a href="#salgados"><button class="btn" >Salgados</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section class="specials" id="specials">
+        <div class="section-title">
+            <h2>Copos Especiais</h2>
+            <p>Combinações exclusivas criadas com muito carinho para você</p>
+        </div>
+        <div class="specials-grid">
+            <!-- Card 1 -->
+            <div class="special-card">
+                <div class="special-img">
+                    <img src="./assets/produtos/ouro-branco.png" alt="">
+                </div>
+                <div class="special-info">
+                    <h3>ESPECIAL OURO BRANCO</h3>
+                    <p>Creme de ninho com ouro branco por cima de 400ml</p>
+                    <div class="product-price">400ml - R$26,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - BOMBOM" data-size="400"
+                            data-price="26.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="special-card">
+                <div class="special-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
+                </div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - MORANGO</h3>
+                    <p>Borda de Nutella, leite Ninho, morangos frescos, granola, açaí e cobertura de leite condensado.
+                    </p>
+                    <div class="product-price">400ml - R$24,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - MORANGO" data-size="400"
+                            data-price="24.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="special-card">
+                <div class="special-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
+                </div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - DOCE DE LEITE</h3>
+                    <p>Borda de doce de leite, leite Ninho, paçoca, amendoim, açaí e cobertura de leite condensado.</p>
+                    <div class="product-price">400ml - R$22,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - DOCE DE LEITE" data-size="400"
+                            data-price="22.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="special-card">
+                <div class="special-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
+                </div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - FRUTAS VERMELHAS</h3>
+                    <p>Borda de morango, leite Ninho, mix de frutas vermelhas, granola, açaí e cobertura de leite
+                        condensado.</p>
+                    <div class="product-price">400ml - R$25,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - FRUTAS VERMELHAS" data-size="400"
+                            data-price="25.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Section -->
+    <section class="custom" id="custom">
+        <div class="section-title">
+            <h2>Monte seu Açaí</h2>
+            <p>Personalize do seu jeito com nossas deliciosas opções</p>
+        </div>
+        <div class="custom-container">
+            <div class="size-options">
+                <div class="size-option active" data-size="300" data-price="12.00">
+                    <h4>300ml</h4>
+                    <div class="price">R$ 12,00</div>
+                    <div class="restrictions">2 cremes, 1 cobertura, 1 fruta, 3 acompanhamentos</div>
+                </div>
+                <div class="size-option" data-size="400" data-price="16.00">
+                    <h4>400ml</h4>
+                    <div class="price">R$ 16,00</div>
+                    <div class="restrictions">2 cremes, 1 cobertura, 1 fruta, 3 acompanhamentos</div>
+                </div>
+                <div class="size-option" data-size="500" data-price="18.00">
+                    <h4>500ml</h4>
+                    <div class="price">R$ 18,00</div>
+                    <div class="restrictions">2 cremes, 1 cobertura, 2 frutas, 5 acompanhamentos</div>
+                </div>
+            </div>
+
+            <div class="customization-panel">
+                <!-- Cremes -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-ice-cream"></i> Cremes (Escolha até 2)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="cremes" data-name="Leite Ninho">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Leite Ninho">
+                            <h4>Leite Ninho</h4>
+                        </div>
+                        <div class="option-item" data-group="cremes" data-name="Nutella">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Nutella">
+                            <h4>Nutella</h4>
+                        </div>
+                        <div class="option-item" data-group="cremes" data-name="Doce de Leite">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Doce de Leite">
+                            <h4>Doce de Leite</h4>
+                        </div>
+                        <div class="option-item" data-group="cremes" data-name="Ovomaltine">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Ovomaltine">
+                            <h4>Ovomaltine</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coberturas -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-candy-cane"></i> Coberturas (Escolha 1)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="coberturas" data-name="Leite Condensado">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Leite Condensado">
+                            <h4>Leite Condensado</h4>
+                        </div>
+                        <div class="option-item" data-group="coberturas" data-name="Calda de Morango">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Calda de Morango">
+                            <h4>Calda de Morango</h4>
+                        </div>
+                        <div class="option-item" data-group="coberturas" data-name="Calda de Chocolate">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Calda de Chocolate">
+                            <h4>Calda de Chocolate</h4>
+                        </div>
+                        <div class="option-item" data-group="coberturas" data-name="Mel">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Mel">
+                            <h4>Mel</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frutas -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-apple-alt"></i> Frutas (Escolha 1 ou 2)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="frutas" data-name="Morango">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Morango">
+                            <h4>Morango</h4>
+                        </div>
+                        <div class="option-item" data-group="frutas" data-name="Banana">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Banana">
+                            <h4>Banana</h4>
+                        </div>
+                        <div class="option-item" data-group="frutas" data-name="Kiwi">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Kiwi">
+                            <h4>Kiwi</h4>
+                        </div>
+                        <div class="option-item" data-group="frutas" data-name="Manga">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Manga">
+                            <h4>Manga</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acompanhamentos -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-cookie"></i> Acompanhamentos (Escolha 3 ou 5)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="acompanhamentos" data-name="Granola">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Granola">
+                            <h4>Granola</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Paçoca">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Paçoca">
+                            <h4>Paçoca</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Amendoim">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Amendoim">
+                            <h4>Amendoim</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Confete">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Confete">
+                            <h4>Confete</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Chocolate">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Chocolate">
+                            <h4>Chocolate</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Leite em Pó">
+                            <img src="./assets/logos/Logo-cabeca-hits.png" alt="Leite em Pó">
+                            <h4>Leite em Pó</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-summary">
+                <h3>Resumo do Pedido</h3>
+                <div class="summary-items">
+                    <div class="summary-item"><i class="fas fa-wine-bottle"></i> Tamanho: <span
+                            id="summary-size">300ml</span></div>
+                    <div class="summary-item"><i class="fas fa-ice-cream"></i> Cremes: <span id="summary-cremes">Nenhum
+                            selecionado</span></div>
+                    <div class="summary-item"><i class="fas fa-candy-cane"></i> Cobertura: <span
+                            id="summary-coberturas">Nenhum selecionado</span></div>
+                    <div class="summary-item"><i class="fas fa-apple-alt"></i> Frutas: <span id="summary-frutas">Nenhum
+                            selecionado</span></div>
+                    <div class="summary-item"><i class="fas fa-cookie"></i> Acompanhamentos: <span
+                            id="summary-acompanhamentos">Nenhum selecionado</span></div>
+                </div>
+                <div class="summary-price">
+                    <div>Total:</div>
+                    <div><span id="summary-total">R$ 12,00</span></div>
+                </div>
+                <button class="btn" id="add-custom-to-cart" style="width:100%; margin-top:20px;">Adicionar ao
+                    Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salgados Section -->
+    <section class="salgados" id="salgados">
+        <div class="section-title">
+            <h2>Salgados</h2>
+            <p>Acompanhe seu açaí com nossos deliciosos salgados</p>
+        </div>
+        <div class="salgados-grid">
+            <!-- card 1 salgado  -->
+            <div class="special-card">
+                <div class="special-img">
+                    <img src="./assets/produtos/ouro-branco.png" alt="">
+                </div>
+                <div class="special-info">
+                    <h3>Coxinha</h3>
+                    <p>Aproveite agora a melhor coxinha de Macau! Não perca tempo e peça o seu</p>
+                    <div class="product-price">R$6,00 - Frango</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="Coxinha - Frango" data-size="Tamanho padrão"
+                            data-price="6.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 salgado  -->
+            <div class="special-card">
+                <div class="special-img">
+                    <img src="./assets/produtos/ouro-branco.png" alt="">
+                </div>
+                <div class="special-info">
+                    <h3>Pastel de forno</h3>
+                    <p>Aproveite agora o melhor pastel de forno de Macau! Não perca tempo e peça o seu</p>
+                    <div class="product-price">R$6,00 - Frango</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="Pastel de forno - Frango" data-size="Tamanho padrão"
+                            data-price="6.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 salgado  -->
+            <div class="special-card">
+                <div class="special-img">
+                    <img src="./assets/produtos/ouro-branco.png" alt="">
+                </div>
+                <div class="special-info">
+                    <h3>Enroladinho</h3>
+                    <p>Aproveite agora o melhor Enroladinho de Macau! Não perca tempo e peça o seu</p>
+                    <div class="product-price">R$6,00 - Queijo e presunto</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="Enroladinho - Queijo e presunto" data-size="Tamanho padrão"
+                            data-price="6.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 4 salgado  -->
+            <div class="special-card">
+                <div class="special-img">
+                    <img src="./assets/produtos/ouro-branco.png" alt="">
+                </div>
+                <div class="special-info">
+                    <h3>Coxinha</h3>
+                    <p>Aproveite agora a melhor coxinha de Macau! Não perca tempo e peça o seu</p>
+                    <div class="product-price">R$6,00 - Carne de sol</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="Coxinha - Carne de sol" data-size="Tamanho padrão"
+                            data-price="6.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo"><i class="fas fa-crown"></i>Açaí do<span>Bom</span></a>
+                <p>O melhor açaí da região com ingredientes de alta qualidade e sabores inesquecíveis.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#specials">Copos Especiais</a></li>
+                    <li><a href="#custom">Personalizar Açaí</a></li>
+                    <li><a href="#salgados">Salgados</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (84) 99600-2433</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Macau/RN - Brasil</li>
+                    <li><i class="fas fa-envelope"></i> contato@acaibom.com</li>
+                </ul>
+            </div>
+            <div class="footer-hours">
+                <h4>Horário de Funcionamento</h4>
+                <ul>
+                    <li>Segunda a Sábado: 14h - 22h</li>
+                    <li>Domingo: 16h - 22h</li>
+                    <li>Feriados: 16h - 00h</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Açaí do Bom. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Menu Modal -->
+    <div class="modal" id="menu-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Nosso Cardápio</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://via.placeholder.com/700x1000" alt="Cardápio Completo" style="width:100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Seu Carrinho</h2>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <div class="cart-total">
+                <div>Total:</div>
+                <div><span id="cart-total-price">R$ 0,00</span></div>
+            </div>
+            <div class="cart-buttons">
+                <button class="btn" id="continue-shopping">Continuar Comprando</button>
+                <button class="btn btn-primary" id="checkout-button">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Finalizar Pedido</h2>
+            </div>
+            <div class="modal-body">
+                <form id="delivery-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Endereço Completo</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Local de Entrega</label>
+                        <select id="location" required>
+                            <option value="">Selecione</option>
+                            <option value="Macau">Macau</option>
+                            <option value="Ilha I">Ilha I</option>
+                            <option value="Ilha II">Ilha II</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Forma de Pagamento</label>
+                        <select id="payment" required>
+                            <option value="">Selecione</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Débito">Cartão de Débito</option>
+                            <option value="PIX">PIX</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Observações (Opcional)</label>
+                        <textarea id="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Enviar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" id="floating-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+    <!-- Adicione este código dentro do <body>, preferencialmente no final -->
+    <canvas id="logo-canvas" style="display: none;"></canvas>
+</body>
+<script src="./js/script.js"></script>
+
+</html>

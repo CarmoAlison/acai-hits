@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí do Bom - O melhor açaí da região!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6F26CD;
+            --secondary: #8AC73E;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-purple: #9b6cef;
+            --light-green: #b8e986;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafafa;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 10px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+            margin-left: 15px;
+        }
+
+        .cart-btn:hover {
+            background: var(--light-purple);
+            transform: translateY(-3px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--secondary);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-left: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(111, 38, 205, 0.85), rgba(111, 38, 205, 0.85)), url('https://images.unsplash.com/photo-1608048608022-5a81f2d9d0b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(138, 199, 62, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 199, 62, 0.6);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            box-shadow: 0 4px 15px rgba(111, 38, 205, 0.4);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(111, 38, 205, 0.6);
+        }
+
+        /* Sections Common */
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Specials Section */
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .special-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .special-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .special-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .special-info {
+            padding: 25px;
+        }
+
+        .special-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .special-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            min-height: 80px;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .quantity button {
+            width: 35px;
+            height: 35px;
+            background: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity span {
+            width: 40px;
+            text-align: center;
+        }
+
+        /* Custom Section */
+        .custom-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .size-option {
+            flex: 1;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .size-option.active {
+            border-color: var(--secondary);
+            background: rgba(138, 199, 62, 0.1);
+        }
+
+        .size-option h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .size-option .price {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .size-option .restrictions {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+
+        .customization-panel {
+            margin-bottom: 30px;
+        }
+
+        .customization-group {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .customization-group:last-child {
+            border-bottom: none;
+        }
+
+        .customization-group h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .customization-group h3 i {
+            margin-right: 8px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .option-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .option-item.active {
+            border-color: var(--secondary);
+            background: rgba(138, 199, 62, 0.1);
+        }
+
+        .option-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            background: #f1f1f1;
+        }
+
+        .option-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .option-item p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .option-item .checkmark {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .option-item.active .checkmark {
+            opacity: 1;
+        }
+
+        .custom-summary {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .custom-summary h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .summary-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .summary-item {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .summary-item i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        .summary-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .summary-price span {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .logo span {
+            color: var(--secondary);
+        }
+
+        .footer-brand p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-hours h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after,
+        .footer-contact h4::after,
+        .footer-hours h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .footer-links ul,
+        .footer-contact ul,
+        .footer-hours ul {
+            list-style: none;
+        }
+
+        .footer-links li,
+        .footer-contact li,
+        .footer-hours li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact li,
+        .footer-hours li {
+            display: flex;
+            align-items: center;
+            opacity: 0.8;
+        }
+
+        .footer-contact i,
+        .footer-hours i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalOpen 0.4s ease;
+        }
+
+        @keyframes modalOpen {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* Cart Items */
+        .cart-items {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .item-price {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-actions button {
+            background: #f1f1f1;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 10px;
+        }
+
+        .item-actions button:hover {
+            background: var(--light-purple);
+            color: white;
+        }
+
+        .cart-total {
+            padding: 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .cart-total span {
+            color: var(--secondary);
+        }
+
+        .cart-buttons {
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .cart-buttons .btn {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Checkout Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(111, 38, 205, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Floating Cart */
+        .floating-cart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(111, 38, 205, 0.4);
+            transition: var(--transition);
+            display: none;
+        }
+
+        .floating-cart:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(111, 38, 205, 0.5);
+        }
+
+        .floating-cart .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--secondary);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 3000;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .notification.success {
+            background: var(--secondary);
+        }
+
+        /* PDF Template */
+        #pdf-template {
+            display: none;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            color: #333;
+        }
+        
+        .pdf-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #6F26CD;
+            padding-bottom: 15px;
+        }
+        
+        .pdf-header h1 {
+            color: #6F26CD;
+            font-size: 24px;
+        }
+        
+        .pdf-section {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pdf-section h2 {
+            color: #8AC73E;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .pdf-item {
+            margin-bottom: 10px;
+        }
+        
+        .pdf-total {
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #6F26CD;
+        }
+        
+        .pdf-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: white;
+                width: 100%;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .size-options {
+                flex-direction: column;
+            }
+
+            .cart-buttons {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .specials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-crown"></i>Açaí do<span>Bom</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#specials">Especiais</a></li>
+            <li><a href="#custom">Personalizar</a></li>
+            <li><a href="#salgados">Salgados</a></li>
+            <li><a href="#footer">Contato</a></li>
+        </ul>
+        <div class="header-buttons">
+            <button class="cart-btn" id="cart-button">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>O melhor açaí da região!</h1>
+            <p>Experimente nosso açaí especial com ingredientes de qualidade e combinações irresistíveis.</p>
+            <button class="btn" id="menu-button">Ver Cardápio</button>
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section class="specials" id="specials">
+        <div class="section-title">
+            <h2>Copos Especiais</h2>
+            <p>Combinações exclusivas criadas com muito carinho para você</p>
+        </div>
+        <div class="specials-grid">
+            <!-- Card 1 -->
+            <div class="special-card">
+                <div class="special-img" style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - BOMBOM</h3>
+                    <p>Feito com borda de Nutella, leite Ninho, fundo de bombom, ouro branco picado, açaí e cobertura de leite condensado.</p>
+                    <div class="product-price">400ml - R$26,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - BOMBOM" data-size="400" data-price="26.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="special-card">
+                <div class="special-img" style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - MORANGO</h3>
+                    <p>Borda de Nutella, leite Ninho, morangos frescos, granola, açaí e cobertura de leite condensado.</p>
+                    <div class="product-price">400ml - R$24,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - MORANGO" data-size="400" data-price="24.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="special-card">
+                <div class="special-img" style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - DOCE DE LEITE</h3>
+                    <p>Borda de doce de leite, leite Ninho, paçoca, amendoim, açaí e cobertura de leite condensado.</p>
+                    <div class="product-price">400ml - R$22,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - DOCE DE LEITE" data-size="400" data-price="22.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="special-card">
+                <div class="special-img" style="background-image: url('https://images.unsplash.com/photo-1560264281-5b74a6d038a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                <div class="special-info">
+                    <h3>ESPECIAL MIX - FRUTAS VERMELHAS</h3>
+                    <p>Borda de morango, leite Ninho, mix de frutas vermelhas, granola, açaí e cobertura de leite condensado.</p>
+                    <div class="product-price">400ml - R$25,00</div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="decrement">-</button>
+                            <span>1</span>
+                            <button class="increment">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-name="ESPECIAL MIX - FRUTAS VERMELHAS" data-size="400" data-price="25.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Section -->
+    <section class="custom" id="custom">
+        <div class="section-title">
+            <h2>Monte seu Açaí</h2>
+            <p>Personalize do seu jeito com nossas deliciosas opções</p>
+        </div>
+        <div class="custom-container">
+            <div class="size-options">
+                <div class="size-option active" data-size="300" data-price="12.00">
+                    <h4>300ml</h4>
+                    <div class="price">R$ 12,00</div>
+                    <div class="restrictions">2 cremes, 1 cobertura, 1 fruta, 3 acompanhamentos</div>
+                </div>
+                <div class="size-option" data-size="400" data-price="16.00">
+                    <h4>400ml</h4>
+                    <div class="price">R$ 16,00</div>
+                    <div class="restrictions">2 cremes, 1 cobertura, 1 fruta, 3 acompanhamentos</div>
+                </div>
+                <div class="size-option" data-size="500" data-price="18.00">
+                    <h4>500ml</h4>
+                    <div class="price">R$ 18,00</div>
+                    <div class="restrictions">2 cremes, 1 cobertura, 2 frutas, 5 acompanhamentos</div>
+                </div>
+            </div>
+            
+            <div class="customization-panel">
+                <!-- Cremes -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-ice-cream"></i> Cremes (Escolha até 2)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="cremes" data-name="Leite Ninho">
+                            <img src="https://via.placeholder.com/50" alt="Leite Ninho">
+                            <h4>Leite Ninho</h4>
+                        </div>
+                        <div class="option-item" data-group="cremes" data-name="Nutella">
+                            <img src="https://via.placeholder.com/50" alt="Nutella">
+                            <h4>Nutella</h4>
+                        </div>
+                        <div class="option-item" data-group="cremes" data-name="Doce de Leite">
+                            <img src="https://via.placeholder.com/50" alt="Doce de Leite">
+                            <h4>Doce de Leite</h4>
+                        </div>
+                        <div class="option-item" data-group="cremes" data-name="Ovomaltine">
+                            <img src="https://via.placeholder.com/50" alt="Ovomaltine">
+                            <h4>Ovomaltine</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coberturas -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-candy-cane"></i> Coberturas (Escolha 1)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="coberturas" data-name="Leite Condensado">
+                            <img src="https://via.placeholder.com/50" alt="Leite Condensado">
+                            <h4>Leite Condensado</h4>
+                        </div>
+                        <div class="option-item" data-group="coberturas" data-name="Calda de Morango">
+                            <img src="https://via.placeholder.com/50" alt="Calda de Morango">
+                            <h4>Calda de Morango</h4>
+                        </div>
+                        <div class="option-item" data-group="coberturas" data-name="Calda de Chocolate">
+                            <img src="https://via.placeholder.com/50" alt="Calda de Chocolate">
+                            <h4>Calda de Chocolate</h4>
+                        </div>
+                        <div class="option-item" data-group="coberturas" data-name="Mel">
+                            <img src="https://via.placeholder.com/50" alt="Mel">
+                            <h4>Mel</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frutas -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-apple-alt"></i> Frutas (Escolha 1 ou 2)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="frutas" data-name="Morango">
+                            <img src="https://via.placeholder.com/50" alt="Morango">
+                            <h4>Morango</h4>
+                        </div>
+                        <div class="option-item" data-group="frutas" data-name="Banana">
+                            <img src="https://via.placeholder.com/50" alt="Banana">
+                            <h4>Banana</h4>
+                        </div>
+                        <div class="option-item" data-group="frutas" data-name="Kiwi">
+                            <img src="https://via.placeholder.com/50" alt="Kiwi">
+                            <h4>Kiwi</h4>
+                        </div>
+                        <div class="option-item" data-group="frutas" data-name="Manga">
+                            <img src="https://via.placeholder.com/50" alt="Manga">
+                            <h4>Manga</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Acompanhamentos -->
+                <div class="customization-group">
+                    <h3><i class="fas fa-cookie"></i> Acompanhamentos (Escolha 3 ou 5)</h3>
+                    <div class="options-grid">
+                        <div class="option-item" data-group="acompanhamentos" data-name="Granola">
+                            <img src="https://via.placeholder.com/50" alt="Granola">
+                            <h4>Granola</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Paçoca">
+                            <img src="https://via.placeholder.com/50" alt="Paçoca">
+                            <h4>Paçoca</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Amendoim">
+                            <img src="https://via.placeholder.com/50" alt="Amendoim">
+                            <h4>Amendoim</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Confete">
+                            <img src="https://via.placeholder.com/50" alt="Confete">
+                            <h4>Confete</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Chocolate">
+                            <img src="https://via.placeholder.com/50" alt="Chocolate">
+                            <h4>Chocolate</h4>
+                        </div>
+                        <div class="option-item" data-group="acompanhamentos" data-name="Leite em Pó">
+                            <img src="https://via.placeholder.com/50" alt="Leite em Pó">
+                            <h4>Leite em Pó</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="custom-summary">
+                <h3>Resumo do Pedido</h3>
+                <div class="summary-items">
+                    <div class="summary-item"><i class="fas fa-wine-bottle"></i> Tamanho: <span id="summary-size">300ml</span></div>
+                    <div class="summary-item"><i class="fas fa-ice-cream"></i> Cremes: <span id="summary-cremes">Nenhum selecionado</span></div>
+                    <div class="summary-item"><i class="fas fa-candy-cane"></i> Cobertura: <span id="summary-coberturas">Nenhum selecionado</span></div>
+                    <div class="summary-item"><i class="fas fa-apple-alt"></i> Frutas: <span id="summary-frutas">Nenhum selecionado</span></div>
+                    <div class="summary-item"><i class="fas fa-cookie"></i> Acompanhamentos: <span id="summary-acompanhamentos">Nenhum selecionado</span></div>
+                </div>
+                <div class="summary-price">
+                    <div>Total:</div>
+                    <div><span id="summary-total">R$ 12,00</span></div>
+                </div>
+                <button class="btn" id="add-custom-to-cart" style="width:100%; margin-top:20px;">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salgados Section -->
+    <section class="salgados" id="salgados">
+        <div class="section-title">
+            <h2>Salgados</h2>
+            <p>Acompanhe seu açaí com nossos deliciosos salgados</p>
+        </div>
+        <div class="salgados-grid">
+            <!-- Cards de salgados (opcional) -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo"><i class="fas fa-crown"></i>Açaí do<span>Bom</span></a>
+                <p>O melhor açaí da região com ingredientes de alta qualidade e sabores inesquecíveis.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#specials">Copos Especiais</a></li>
+                    <li><a href="#custom">Personalizar Açaí</a></li>
+                    <li><a href="#salgados">Salgados</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (84) 99600-2433</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Macau/RN - Brasil</li>
+                    <li><i class="fas fa-envelope"></i> contato@acaibom.com</li>
+                </ul>
+            </div>
+            <div class="footer-hours">
+                <h4>Horário de Funcionamento</h4>
+                <ul>
+                    <li>Segunda a Sábado: 14h - 22h</li>
+                    <li>Domingo: 16h - 22h</li>
+                    <li>Feriados: 16h - 00h</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Açaí do Bom. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- PDF Template -->
+    <div id="pdf-template" style="display: none;">
+        <div class="pdf-header">
+            <h1>Açaí do Bom</h1>
+            <p>O melhor açaí da região!</p>
+            <p>Tel: (84) 99600-2433 | Macau/RN</p>
+        </div>
+        
+        <div class="pdf-section">
+            <h2>Dados do Cliente</h2>
+            <div class="pdf-item"><strong>Nome:</strong> <span id="pdf-name"></span></div>
+            <div class="pdf-item"><strong>Endereço:</strong> <span id="pdf-address"></span></div>
+            <div class="pdf-item"><strong>Local de Entrega:</strong> <span id="pdf-location"></span></div>
+            <div class="pdf-item"><strong>Forma de Pagamento:</strong> <span id="pdf-payment"></span></div>
+            <div class="pdf-item"><strong>Observações:</strong> <span id="pdf-notes"></span></div>
+        </div>
+        
+        <div class="pdf-section">
+            <h2>Itens do Pedido</h2>
+            <div id="pdf-items"></div>
+        </div>
+        
+        <div class="pdf-total">
+            <strong>TOTAL:</strong> R$ <span id="pdf-total-price">0,00</span>
+        </div>
+        
+        <div class="pdf-footer">
+            <p>Data: <span id="pdf-date"></span></p>
+            <p>Obrigado por seu pedido! Entraremos em contato em breve.</p>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Menu Modal -->
+    <div class="modal" id="menu-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Nosso Cardápio</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://via.placeholder.com/700x1000" alt="Cardápio Completo" style="width:100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Seu Carrinho</h2>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <div class="cart-total">
+                <div>Total:</div>
+                <div><span id="cart-total-price">R$ 0,00</span></div>
+            </div>
+            <div class="cart-buttons">
+                <button class="btn" id="continue-shopping">Continuar Comprando</button>
+                <button class="btn btn-primary" id="checkout-button">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Finalizar Pedido</h2>
+            </div>
+            <div class="modal-body">
+                <form id="delivery-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Endereço Completo</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Local de Entrega</label>
+                        <select id="location" required>
+                            <option value="">Selecione</option>
+                            <option value="Macau">Macau</option>
+                            <option value="Ilha I">Ilha I</option>
+                            <option value="Ilha II">Ilha II</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Forma de Pagamento</label>
+                        <select id="payment" required>
+                            <option value="">Selecione</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Débito">Cartão de Débito</option>
+                            <option value="PIX">PIX</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Observações (Opcional)</label>
+                        <textarea id="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Enviar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" id="floating-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Bibliotecas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.3/html2pdf.bundle.min.js" integrity="sha512-yu5WG6ewBNKx8svICzUA01vozhmiQCVfzjzW40eCHJdsDRaOifh9hPlWBDex5b32gWCzawTp1F3FJz60ps6TnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // DOM Elements
+        const menuButton = document.getElementById('menu-button');
+        const menuModal = document.getElementById('menu-modal');
+        const cartModal = document.getElementById('cart-modal');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartButton = document.getElementById('cart-button');
+        const floatingCart = document.getElementById('floating-cart');
+        const checkoutButton = document.getElementById('checkout-button');
+        const continueShopping = document.getElementById('continue-shopping');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const sizeOptions = document.querySelectorAll('.size-option');
+        const optionItems = document.querySelectorAll('.option-item');
+        const deliveryForm = document.getElementById('delivery-form');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const cartCount = document.querySelector('.cart-count');
+        const addCustomToCart = document.getElementById('add-custom-to-cart');
+
+        // Cart data
+        let cart = [];
+
+        // Toggle Menu
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Open Menu Modal
+        menuButton.addEventListener('click', () => {
+            menuModal.classList.add('active');
+        });
+
+        // Open Cart Modal
+        cartButton.addEventListener('click', () => {
+            updateCartModal();
+            cartModal.classList.add('active');
+        });
+
+        // Floating cart button
+        floatingCart.addEventListener('click', () => {
+            updateCartModal();
+            cartModal.classList.add('active');
+        });
+
+        // Open Checkout Modal
+        checkoutButton.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+            checkoutModal.classList.add('active');
+        });
+
+        // Continue Shopping
+        continueShopping.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+
+        // Close Modals
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                menuModal.classList.remove('active');
+                cartModal.classList.remove('active');
+                checkoutModal.classList.remove('active');
+            });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === menuModal) menuModal.classList.remove('active');
+            if (e.target === cartModal) cartModal.classList.remove('active');
+            if (e.target === checkoutModal) checkoutModal.classList.remove('active');
+        });
+
+        // Size selection
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                sizeOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                updateCustomSummary();
+            });
+        });
+
+        // Option selection
+        optionItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const group = item.dataset.group;
+                const maxSelections = getMaxSelectionsForGroup(group);
+
+                // Get currently selected items in this group
+                const selectedItems = document.querySelectorAll(`.option-item[data-group="${group}"].active`);
+
+                // For groups that allow multiple selections
+                if (maxSelections > 1) {
+                    if (item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    } else {
+                        if (selectedItems.length < maxSelections) {
+                            item.classList.add('active');
+                        } else {
+                            showNotification(`Você só pode escolher ${maxSelections} opções para este grupo`);
+                        }
+                    }
+                }
+                // For groups that allow only one selection
+                else {
+                    // Remove active class from all items in this group
+                    document.querySelectorAll(`.option-item[data-group="${group}"]`).forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                }
+
+                updateCustomSummary();
+            });
+        });
+
+        // Get max selections for a group
+        function getMaxSelectionsForGroup(group) {
+            const activeSize = document.querySelector('.size-option.active');
+            if (!activeSize) return 0;
+
+            const size = parseInt(activeSize.dataset.size);
+
+            switch (group) {
+                case 'cremes':
+                    return 2;
+                case 'coberturas':
+                    return 1;
+                case 'frutas':
+                    return size === 500 ? 2 : 1;
+                case 'acompanhamentos':
+                    return size === 500 ? 5 : 3;
+                default:
+                    return 0;
+            }
+        }
+
+        // Update custom summary
+        function updateCustomSummary() {
+            const activeSize = document.querySelector('.size-option.active');
+            if (!activeSize) return;
+
+            const size = activeSize.dataset.size;
+            const price = parseFloat(activeSize.dataset.price);
+
+            // Get selected cremes
+            const selectedCremes = document.querySelectorAll('.option-item[data-group="cremes"].active');
+            const cremesText = selectedCremes.length > 0 ?
+                Array.from(selectedCremes).map(item => item.dataset.name).join(', ') :
+                'Nenhum selecionado';
+
+            // Get selected coberturas
+            const selectedCoberturas = document.querySelectorAll('.option-item[data-group="coberturas"].active');
+            const coberturasText = selectedCoberturas.length > 0 ?
+                selectedCoberturas[0].dataset.name :
+                'Nenhum selecionado';
+
+            // Get selected frutas
+            const selectedFrutas = document.querySelectorAll('.option-item[data-group="frutas"].active');
+            const frutasText = selectedFrutas.length > 0 ?
+                Array.from(selectedFrutas).map(item => item.dataset.name).join(', ') :
+                'Nenhum selecionado';
+
+            // Get selected acompanhamentos
+            const selectedAcompanhamentos = document.querySelectorAll('.option-item[data-group="acompanhamentos"].active');
+            const acompanhamentosText = selectedAcompanhamentos.length > 0 ?
+                Array.from(selectedAcompanhamentos).map(item => item.dataset.name).join(', ') :
+                'Nenhum selecionado';
+
+            // Update summary
+            document.getElementById('summary-size').textContent = `${size}ml`;
+            document.getElementById('summary-cremes').textContent = cremesText;
+            document.getElementById('summary-coberturas').textContent = coberturasText;
+            document.getElementById('summary-frutas').textContent = frutasText;
+            document.getElementById('summary-acompanhamentos').textContent = acompanhamentosText;
+            document.getElementById('summary-total').textContent = `R$ ${price.toFixed(2).replace('.', ',')}`;
+        }
+
+        // Add custom açaí to cart
+        addCustomToCart.addEventListener('click', () => {
+            const activeSize = document.querySelector('.size-option.active');
+            if (!activeSize) {
+                showNotification('Por favor, selecione um tamanho');
+                return;
+            }
+
+            const size = activeSize.dataset.size;
+            const price = parseFloat(activeSize.dataset.price);
+
+            // Get selected options
+            const selectedCremes = Array.from(document.querySelectorAll('.option-item[data-group="cremes"].active')).map(item => item.dataset.name);
+            const selectedCoberturas = Array.from(document.querySelectorAll('.option-item[data-group="coberturas"].active')).map(item => item.dataset.name);
+            const selectedFrutas = Array.from(document.querySelectorAll('.option-item[data-group="frutas"].active')).map(item => item.dataset.name);
+            const selectedAcompanhamentos = Array.from(document.querySelectorAll('.option-item[data-group="acompanhamentos"].active')).map(item => item.dataset.name);
+
+            // Validate selections
+            const maxCremes = 2;
+            const maxCoberturas = 1;
+            const maxFrutas = size === '500' ? 2 : 1;
+            const maxAcompanhamentos = size === '500' ? 5 : 3;
+
+            if (selectedCremes.length > maxCremes) {
+                showNotification(`Você só pode escolher ${maxCremes} cremes`);
+                return;
+            }
+
+            if (selectedCoberturas.length > maxCoberturas) {
+                showNotification(`Você só pode escolher ${maxCoberturas} cobertura`);
+                return;
+            }
+
+            if (selectedFrutas.length > maxFrutas) {
+                showNotification(`Você só pode escolher ${maxFrutas} fruta${maxFrutas > 1 ? 's' : ''}`);
+                return;
+            }
+
+            if (selectedAcompanhamentos.length > maxAcompanhamentos) {
+                showNotification(`Você só pode escolher ${maxAcompanhamentos} acompanhamentos`);
+                return;
+            }
+
+            // Create item object
+            const item = {
+                id: Date.now(),
+                name: 'Açaí Personalizado',
+                size: `${size}ml`,
+                price: price,
+                cremes: selectedCremes,
+                coberturas: selectedCoberturas,
+                frutas: selectedFrutas,
+                acompanhamentos: selectedAcompanhamentos,
+                quantity: 1
+            };
+
+            // Add to cart
+            addToCart(item);
+
+            // Reset customizations
+            resetCustomization();
+
+            // Show success message
+            showNotification('Açaí personalizado adicionado ao carrinho!');
+        });
+
+        // Reset customization
+        function resetCustomization() {
+            // Reset size selection to 300ml
+            sizeOptions.forEach(opt => opt.classList.remove('active'));
+            sizeOptions[0].classList.add('active');
+
+            // Reset all options
+            optionItems.forEach(item => item.classList.remove('active'));
+
+            // Update summary
+            updateCustomSummary();
+        }
+
+        // Add to cart function
+        function addToCart(item) {
+            // Check if item already exists in cart
+            const existingItemIndex = cart.findIndex(cartItem =>
+                cartItem.name === item.name &&
+                cartItem.size === item.size &&
+                JSON.stringify(cartItem.cremes) === JSON.stringify(item.cremes) &&
+                JSON.stringify(cartItem.coberturas) === JSON.stringify(item.coberturas) &&
+                JSON.stringify(cartItem.frutas) === JSON.stringify(item.frutas) &&
+                JSON.stringify(cartItem.acompanhamentos) === JSON.stringify(item.acompanhamentos)
+            );
+
+            if (existingItemIndex !== -1) {
+                // Update quantity if item already exists
+                cart[existingItemIndex].quantity += item.quantity;
+            } else {
+                // Add new item to cart
+                cart.push(item);
+            }
+
+            // Update cart UI
+            updateCartUI();
+        }
+
+        // Update cart UI
+        function updateCartUI() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            document.querySelector('.floating-cart .cart-count').textContent = totalItems;
+
+            // Show floating cart if there are items
+            if (totalItems > 0) {
+                floatingCart.style.display = 'flex';
+            } else {
+                floatingCart.style.display = 'none';
+            }
+        }
+
+        // Update cart modal
+        function updateCartModal() {
+            // Clear current items
+            cartItemsContainer.innerHTML = '';
+
+            // Add items to modal
+            cart.forEach(item => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.classList.add('cart-item');
+                cartItemElement.dataset.id = item.id;
+
+                let details = '';
+                if (item.name === 'Açaí Personalizado') {
+                    details = `${item.size} - ${item.cremes.length} cremes, ${item.coberturas.length} cobertura, ${item.frutas.length} fruta(s), ${item.acompanhamentos.length} acompanhamentos`;
+                } else {
+                    details = item.size;
+                }
+
+                cartItemElement.innerHTML = `
+                    <div class="item-info">
+                        <h4>${item.name}</h4>
+                        <p>${details} - Quantidade: ${item.quantity}</p>
+                    </div>
+                    <div class="item-price">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</div>
+                    <div class="item-actions">
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function () {
+                    const itemId = parseInt(this.closest('.cart-item').dataset.id);
+                    removeFromCart(itemId);
+                });
+            });
+
+            // Update total price
+            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            cartTotalPrice.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+        }
+
+        // Remove item from cart
+        function removeFromCart(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            updateCartUI();
+            updateCartModal();
+        }
+
+        // Add to cart buttons for specials
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const name = this.dataset.name;
+                const size = this.dataset.size;
+                const price = parseFloat(this.dataset.price);
+                const quantity = parseInt(this.closest('.product-actions').querySelector('.quantity span').textContent);
+
+                const item = {
+                    id: Date.now(),
+                    name: name,
+                    size: `${size}ml`,
+                    price: price,
+                    quantity: quantity
+                };
+
+                addToCart(item);
+                showNotification('Item adicionado ao carrinho!');
+            });
+        });
+
+        // Quantity controls for specials
+        document.querySelectorAll('.quantity').forEach(control => {
+            const decrement = control.querySelector('.decrement');
+            const increment = control.querySelector('.increment');
+            const quantity = control.querySelector('span');
+
+            decrement.addEventListener('click', () => {
+                let qty = parseInt(quantity.textContent);
+                if (qty > 1) {
+                    quantity.textContent = qty - 1;
+                }
+            });
+
+            increment.addEventListener('click', () => {
+                let qty = parseInt(quantity.textContent);
+                quantity.textContent = qty + 1;
+            });
+        });
+
+        // Form submission
+        deliveryForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const location = document.getElementById('location').value;
+            const payment = document.getElementById('payment').value;
+            const notes = document.getElementById('notes').value;
+
+            // Create WhatsApp message
+            let message = `*NOVO PEDIDO - AÇAÍ DO BOM*%0A%0A` +
+                `*Nome:* ${name}%0A` +
+                `*Endereço:* ${address}%0A` +
+                `*Local de entrega:* ${location}%0A` +
+                `*Forma de pagamento:* ${payment}%0A` +
+                `*Observações:* ${notes || 'Nenhuma'}%0A%0A` +
+                `*Itens do pedido:*%0A`;
+
+            // Add items to message
+            cart.forEach(item => {
+                if (item.name === 'Açaí Personalizado') {
+                    message += `- ${item.name} (${item.size}) - R$${item.price.toFixed(2)}%0A`;
+                    message += `  Cremes: ${item.cremes.join(', ')}%0A`;
+                    message += `  Cobertura: ${item.coberturas.join(', ')}%0A`;
+                    message += `  Frutas: ${item.frutas.join(', ')}%0A`;
+                    message += `  Acompanhamentos: ${item.acompanhamentos.join(', ')}%0A`;
+                } else {
+                    message += `- ${item.name} (${item.size}) - ${item.quantity}x R$${item.price.toFixed(2)} = R$${(item.price * item.quantity).toFixed(2)}%0A`;
+                }
+            });
+
+            // Add total
+            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            message += `%0A*TOTAL: R$${totalPrice.toFixed(2)}*`;
+
+            // Create WhatsApp link
+            const whatsappLink = `https://wa.me/5584996002433?text=${encodeURIComponent(message)}`;
+
+            try {
+                // Generate PDF
+                const pdfBlob = await generatePDF(name, address, location, payment, notes);
+                
+                // Create a download link for the PDF
+                const pdfUrl = URL.createObjectURL(pdfBlob);
+                const downloadLink = document.createElement('a');
+                downloadLink.href = pdfUrl;
+                downloadLink.download = `Pedido_Açaí_${Date.now()}.pdf`;
+                
+                // Adiciona o link ao documento
+                document.body.appendChild(downloadLink);
+                
+                // Simula o clique no link de download
+                downloadLink.click();
+                
+                // Aguarda 500ms para garantir que o download foi iniciado
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // Abre o WhatsApp em uma nova aba
+                window.open(whatsappLink, '_blank');
+                
+                // Remove o link do documento
+                document.body.removeChild(downloadLink);
+                
+                // Close modal
+                checkoutModal.classList.remove('active');
+
+                // Reset cart
+                cart = [];
+                updateCartUI();
+
+                // Show success message
+                showNotification('Pedido enviado com sucesso! PDF gerado.', 'success');
+            } catch (error) {
+                console.error('Erro ao gerar PDF:', error);
+                showNotification('Erro ao processar o pedido. Por favor, tente novamente.', 'error');
+            }
+        });
+
+        // Generate PDF function using html2pdf.js
+        async function generatePDF(name, address, location, payment, notes) {
+            return new Promise((resolve, reject) => {
+                try {
+                    // Preencher o template do PDF
+                    document.getElementById('pdf-name').textContent = name;
+                    document.getElementById('pdf-address').textContent = address;
+                    document.getElementById('pdf-location').textContent = location;
+                    document.getElementById('pdf-payment').textContent = payment;
+                    document.getElementById('pdf-notes').textContent = notes || 'Nenhuma';
+                    document.getElementById('pdf-date').textContent = new Date().toLocaleString();
+                    
+                    // Calcular o total
+                    const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                    document.getElementById('pdf-total-price').textContent = totalPrice.toFixed(2).replace('.', ',');
+                    
+                    // Limpar itens anteriores
+                    const pdfItemsContainer = document.getElementById('pdf-items');
+                    pdfItemsContainer.innerHTML = '';
+                    
+                    // Adicionar itens ao PDF
+                    cart.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'pdf-item';
+                        
+                        if (item.name === 'Açaí Personalizado') {
+                            itemElement.innerHTML = `
+                                <p><strong>${item.name} (${item.size}) - R$${item.price.toFixed(2)}</strong></p>
+                                <p>Cremes: ${item.cremes.join(', ')}</p>
+                                <p>Cobertura: ${item.coberturas.join(', ')}</p>
+                                <p>Frutas: ${item.frutas.join(', ')}</p>
+                                <p>Acompanhamentos: ${item.acompanhamentos.join(', ')}</p>
+                            `;
+                        } else {
+                            itemElement.innerHTML = `
+                                <p><strong>${item.name} (${item.size})</strong></p>
+                                <p>Quantidade: ${item.quantity} x R$${item.price.toFixed(2)} = R$${(item.price * item.quantity).toFixed(2)}</p>
+                            `;
+                        }
+                        
+                        pdfItemsContainer.appendChild(itemElement);
+                    });
+                    
+                    // Obter o elemento do template
+                    const element = document.getElementById('pdf-template');
+                    
+                    // Opções para o PDF
+                    const options = {
+                        margin: 10,
+                        filename: `Pedido_Açaí_${Date.now()}.pdf`,
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2, useCORS: true },
+                        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                    };
+                    
+                    // Gerar PDF
+                    html2pdf().set(options).from(element).toBlob().then(blob => {
+                        resolve(blob);
+                    }).catch(error => {
+                        reject(error);
+                    });
+                } catch (error) {
+                    reject(error);
+                }
+            });
+        }
+
+        // Show notification function
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+
+            // Add to body
+            document.body.appendChild(notification);
+
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize
+        updateCustomSummary();
+    </script>
+</body>
+</html>
